@@ -169,7 +169,7 @@ const appointments = [
 const Appointment = () => {
 
   const [index, setIndex] = useState(0);
-  const perPage = 4;
+  const perPage = 5;
   const start = index * perPage;
   const end = start + perPage;
   const currentItems = appointments.slice(start, end);
@@ -196,7 +196,7 @@ const Appointment = () => {
 
 
   return (
-    <div className='bg-linear-to-tr from-primary to-bgPrimary h-[86.8vh] overflow-y-auto text-white px-4 py-6'>
+    <div className='bg-linear-to-tr from-primary to-bgPrimary w-full h-[89vh] overflow-y-auto overflow-x-hidden text-white px-4 py-6'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-3'>
         {
           ap.map((apo) => (
@@ -229,8 +229,8 @@ const Appointment = () => {
       </div>
 
       <div className='mt-6 bg-primary/65 rounded-[16px] overflow-hidden'>
-        <div className='overflow-x-auto border border-[#162F61]'>
-          <table className=' table-auto min-w-max lg:w-full'>
+        <div className='w-full overflow-x-auto border border-[#162F61]'>
+          <table className='table-auto min-w-[1100px] w-full'>
             <tbody className='text-[14px] lg:text-[16px] tracking-wide leading-tight'>
               <tr className=' border-b-[2px] border-[#162F61]'>
                 <th className='text-center py-3.5 px-4'>No.</th>
@@ -274,7 +274,7 @@ const Appointment = () => {
         onPageChange={handleChange}
         forcePage={index}
 
-        containerClassName="mt-6 flex item-center justify-center gap-1 sm:gap-2 lg:gap-2 text-sm sm:text-sm lg:text-md font-medium"
+        containerClassName="mt-3 flex item-center justify-center gap-1 sm:gap-2 lg:gap-2 text-sm sm:text-sm lg:text-md font-medium"
 
         pageClassName=" px-2 sm:px-3 py-1 text-[#0F62FE] rounded "
         pageLinkClassName="cursor-pointer"

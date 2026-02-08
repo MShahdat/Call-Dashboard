@@ -4,8 +4,9 @@ import me from '/shahdat1.png';
 import { IoMenu } from "react-icons/io5";
 import Sidebar from './Sidebar';
 import { RxCross2 } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
-const Nav = ({title, setTitle}) => {
+const Nav = ({ title, setTitle }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -25,14 +26,16 @@ const Nav = ({title, setTitle}) => {
             </div>
           </div>
           <div className='flex items-center gap-4'>
-            <MdNotificationsNone className='size-8 stroke-0' />
-            <img src={me} alt="profile" className='w-12 sm:w-16 h-12 sm:h-16 rounded-full object-cover' />
+            <MdNotificationsNone className='size-7 stroke-0' />
+            <Link to={'/setting'}>
+              <img src={me} alt="profile" className='w-12 h-12 rounded-full object-cover' />
+            </Link>
           </div>
         </div>
 
         <div onClick={() => setOpen(!open)}
-         className={`fixed top-20 left-0 z-50 w-fit ${open ? 'translate-x-0' : '-translate-full'} sm:hidden`}>
-          <Sidebar setTitle = {setTitle}/>
+          className={`fixed top-20 left-0 z-50 h-[89vh] bg-red-00 w-fit ${open ? 'translate-x-0' : '-translate-full'} sm:hidden`}>
+          <Sidebar setTitle={setTitle} />
         </div>
       </div>
     </>

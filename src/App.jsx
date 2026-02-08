@@ -8,7 +8,7 @@ const App = () => {
 
   const [title, setTitle] = useState('')
   return (
-    <div className='flex'>
+    <div className='flex overflow-y-auto no-scrollbar'>
       <div className='hidden sm:block'>
         <Sidebar setTitle = {setTitle}/>
       </div>

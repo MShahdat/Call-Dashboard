@@ -1,16 +1,46 @@
-# React + Vite
+# 📊 Call Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive **Call Management Dashboard** built with React and Tailwind CSS.  
+This project visualizes call history, appointments, and client interactions with interactive charts, pagination, and a clean UI.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Website: https://dashboard-call.netlify.app/
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Project Overview
 
-## Expanding the ESLint configuration
+The Call Dashboard application provides an admin-style interface to manage and analyze call-related data.  
+It consists of **four main pages**:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📌 1. Dashboard  
+- Shows overall call statistics  
+- Weekly, Monthly, and Yearly call analytics using charts  
+- Recent activities list  
+- Product repair percentage visualization  
+
+### 📞 2. Call Logs  
+- Displays call history list  
+- Call details and client conversation view  
+
+### 📅 3. Appointments  
+- Client appointment list  
+- Pagination for better data navigation  
+
+### ⚙️ 4. Settings / Profile  
+- Store and user profile details  
+- Editable profile UI  
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **React.js** – Frontend library  
+- **Tailwind CSS** – Styling and responsive design  
+- **React Router DOM** – Page routing  
+- **Recharts** – Data visualization charts  
+- **React Icons** – Icon library  
+- **React Toastify** – Notification system  
+- **React Paginate** – Pagination handling  
+- **Netlify** – Live deployment  
+
+---

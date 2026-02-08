@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { IoCallOutline } from "react-icons/io5";
 import { BiTransfer } from "react-icons/bi";
 import { FaRegCalendar } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
 import { FiClock } from "react-icons/fi";
 import { SiAircall } from "react-icons/si";
+import Chart from './Chart';
 
 
 const das = [
@@ -125,10 +126,65 @@ const repair = [
 
 ]
 
+const dataWeek = [
+  {
+    name: 'Mon', call: 47,
+  },
+  {
+    name: 'Tue', call: 55,
+  },
+  {
+    name: 'Wed', call: 47,
+  },
+  {
+    name: 'Thu', call: 60,
+  },
+  {
+    name: 'Fri', call: 69,
+  },
+  {
+    name: 'Sat', call: 75,
+  },
+  {
+    name: 'Sun', call: 55,
+  },
+];
+
+const dataMonth = [
+  { name: 'January', call: 1590},
+  { name: 'March', call: 1290},
+  { name: 'May', call: 1990},
+  { name: 'July', call: 2290},
+  { name: 'September', call: 1820},
+  { name: 'November', call: 1480},
+];
+
+const dataYear = [
+  { name: '2020', call: 10490},
+  { name: '2021', call: 15090},
+  { name: '2022', call: 10090},
+  { name: '2023', call: 14090},
+  { name: '2024', call: 17020},
+  { name: '2025', call: 22480},
+];
 
 const Dashboard = () => {
+
+  const [range, setRange] = useState('week');
+
+  const chartData = useMemo(() => {
+    if (range === 'week') return dataWeek;
+    if (range === 'month') return dataMonth;
+    if (range === 'year') return dataYear;
+    return dataWeek;
+  }, [range]);
+
+  const total = useMemo(() => {
+    return chartData.reduce((acc, chart) => acc + chart.call, 0);
+  }, [chartData]);
+
   return (
-    <div className='bg-linear-to-tr from-primary to-bgPrimary h-[86.9vh] overflow-auto text-white px-4 py-6'>
+    <div className='bg-linear-to-tr from-primary to-bgPrimary h-[89vh] overflow-auto text-white px-4 py-6'>
       <div className='h-[86.9vh'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3'>
         {
@@ -153,17 +209,19 @@ const Dashboard = () => {
             <div className=' flex items-center justify-between w-full'>
               <p className='font-arimo text-[20px]'>Call Trends - This Week</p>
               <div className='bg-bgPrimary/50 border border-bgPrimary rounded-lg px-2 py-1'>
-                <select className='outline-none w-fit'>
-                  <option className='text-white bg-bgPrimary' value="This Week">This Week </option>
-                  <option className='text-white bg-bgPrimary' value="This Month">This Month </option>
-                  <option className='text-white bg-bgPrimary' value="This Year">This Year </option>
+                <select value={range}
+                  onChange={(e) => setRange(e.target.value)}
+                className='outline-none w-fit'>
+                  <option className='text-white bg-bgPrimary' value="week">Week </option>
+                  <option className='text-white bg-bgPrimary' value="month">Month </option>
+                  <option className='text-white bg-bgPrimary' value="year">Year </option>
                 </select>
               </div>
             </div>
-            <p className='text-[#90A1B9]'>total: 409 calls</p>
+            <p className='text-[#90A1B9]'>total: {total} calls</p>
           </div>
-          <div className='py-8'>
-            chart
+          <div className='px-0 md:px-4 bg-red-00 w-full'>
+            <Chart data = {chartData}/>
           </div>
         </div>
       </div>
@@ -179,7 +237,7 @@ const Dashboard = () => {
                     <div className={`mt-2 w-2 h-2 rounded-full ${act.color}`}></div>
                     <div className=''>
                       <p className='text-[18px]'>{act.title}</p>
-                      <p className='text-[14px] text-[#7A8BA4]'>{act.time}</p>
+                      <p className='text-[14px] text-ternary'>{act.time}</p>
                     </div>
                   </div>
                 </div>

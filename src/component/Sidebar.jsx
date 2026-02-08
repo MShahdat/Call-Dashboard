@@ -21,8 +21,8 @@ const Sidebar = ({setTitle}) => {
   }, [location.pathname])
 
   return (
-    <div className='sticky left-0 z-50 top-0 bg-primary border-r border-white/7 text-white h-screen w-[241px]'>
-      <div className='h-[85vh] sm:h-screen'>
+    <div className='sticky left-0 z-50 top-0 bg-primary border-r border-white/7 text-white h-full w-[241px]'>
+      <div className='h-full sm:h-screen'>
         <div className='py-6 sm:py-12 h-full flex flex-col justify-between'>
         <div className='flex flex-col gap-8'>
           <div className='cursor-pointer mx-auto p-2 bg-linear-to-br from-[#00FF88] to-[#00D4FF] rounded-xl'>
@@ -47,7 +47,7 @@ const Sidebar = ({setTitle}) => {
             </NavLink>
           </div>
         </div>
-        <div className='flex rounded-2xl w-full px-2 py-1 items-center gap-2 cursor-pointer'>
+        <div className='flex rounded-2xl w-full px-4 py-4 items-center gap-2 cursor-pointer'>
           <IoLogOutOutline className='size-6'/>
           <p className='text-red-600'>Log Out</p>
         </div>

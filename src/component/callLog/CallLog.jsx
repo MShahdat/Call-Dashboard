@@ -107,7 +107,7 @@ const type = [
 const CallLog = () => {
 
   return (
-    <div className='bg-linear-to-tr from-primary to-bgPrimary h-[86.9vh] overflow-auto text-white px-4 py-6'>
+    <div className='bg-linear-to-tr from-primary to-bgPrimary h-[89vh] overflow-auto text-white px-4 py-6'>
       <div className='flex flex-col gap-1'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
           <div className='w-full relative text-[#90A1B9] tracking-wide'>
